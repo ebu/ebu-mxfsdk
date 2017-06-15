@@ -27,6 +27,7 @@ The code in this SDK extends the [BMX](http://sourceforge.net/projects/bmxlib/) 
 
 * In its current version, the SDK can be employed to embed EBUCore [EBUCore](http://tech.ebu.ch/lang/en/MetadataEbuCore) 
 metadata documents into MXF file containers. The SDK is constructed such that additional metadata specifications can be easily added.
+* In this version 2.0, the SDK offers more flexibility for embedding metadata, include the use of custom keys for dark metadata serialization and metadata embedded compliant with the SMPTE RP2057:2011 specification.
 * The SDK also offers analysis capabilities and can be used to generated SMPTE ST-434-compliant XML reports describing the properties of MXF files.
 
 ## Getting Started
