@@ -377,7 +377,17 @@ void serializeMXFValue(unsigned int type, uint8_t *value, DOMElement* elem, DOMD
 
 		PrepareElementWithContent(root, elem, s377mTypesNS, _X("Numerator", tc), _X(serialize_simple<int32_t>(v.numerator), tc));
 		PrepareElementWithContent(root, elem, s377mTypesNS, _X("Denominator", tc), _X(serialize_simple<int32_t>(v.denominator), tc));
-
+    } else if (type == MXF_AUID_TYPE) {
+        // AUIDs are written out as UUIDs in ST-434, not a combo of UUID and UL based on the actual content of the identifier.
+        if (mxf_is_ul((mxfUID *)value)) {
+            GET_AND_SERIALIZE_BY_REF(mxfUUID, value, mxf_get_uuid, serialize_uuid, elem, tc);
+        } else {
+            // UUIDs are stored in reverse order, need to fix this when writing out to the report
+            mxfUID t;
+            mxf_swap_uid(&t, (mxfUID *)value);
+            GET_AND_SERIALIZE_BY_REF(mxfUUID, (uint8_t*)&t, mxf_get_uuid, serialize_uuid, elem, tc);
+        }
+            
 	} else if (type == MXF_UL_TYPE) {
 		GET_AND_SERIALIZE_BY_REF(mxfUL, value, mxf_get_ul, serialize_ul, elem, tc);
 	} else if (type == MXF_UMID_TYPE || type == MXF_PACKAGEID_TYPE) {
