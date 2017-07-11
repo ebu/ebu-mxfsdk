@@ -107,6 +107,8 @@ SetShellVarContext all
 Section "MXFSDK" SecMXFSDK
 
   SetOutPath "$INSTDIR"
+
+  File "/oname=README.md" "..\..\README.md"
   
   CreateDirectory "$INSTDIR\bin"
   File "/oname=bin\ebu2mxf.exe" "..\..\bin\ebu2mxf.exe"
