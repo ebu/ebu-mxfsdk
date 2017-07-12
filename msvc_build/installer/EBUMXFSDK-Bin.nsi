@@ -1,6 +1,6 @@
 
 !define PRODUCT_NAME "EBU MXF SDK Binaries"
-!define VERSION "2.0.0" ;@VERSION@
+!define VERSION "2.0.1" ;@VERSION@
 !define PRODUCT_VERSION "2.0" ;@VERSION@
 !define PRODUCT_GROUP "EBU"
 !define PRODUCT_PUBLISHER "EBU Technical"
