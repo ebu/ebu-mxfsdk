@@ -117,7 +117,7 @@ int main(int argc, const char** argv)
     bool do_use_dark_metadata_key = false;
     mxfKey darkMetadataKey;
     bool do_use_xml_scheme_id = false;
-    UL xml_scheme_id;
+    UL xml_scheme_id = g_Null_UL;
     int cmdln_index;
 
     const mxfUL default_rp2057_DMScheme = { 0x06, 0x0E, 0x2B, 0x34, 0x02, 0x7F, 0x01, 0x0B, 0x0D, 0x02, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00 };
