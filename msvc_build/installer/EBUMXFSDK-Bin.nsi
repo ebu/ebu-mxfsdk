@@ -200,6 +200,8 @@ Section "Uninstall"
   ;ADD YOUR OWN FILES HERE...
 
   Delete "$INSTDIR\Uninstall.exe"
+  
+  Delete "$INSTDIR\README.md"
 
   RMDir /r "$SMPROGRAMS\${PRODUCT_NAME}"
   
